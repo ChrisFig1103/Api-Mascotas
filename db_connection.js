@@ -1,12 +1,11 @@
 const pgp = require('pg-promise')();
 
 const connectionConfig ={
-    host:'localhost',
+    host:'some-postgres',
     port: 5432,
-    database:'my-database-name',
-    user: 'user-name',
-    password:'user-password',
-    max:30
+    database:'postgres',
+    user: 'postgres',
+    password:'mysecretpassword'
 };
 
 const db = pgp(connectionConfig);

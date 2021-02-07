@@ -4,15 +4,15 @@ const {getProducts} = require('./db_connection');
 
 const app = express();
 
-app.get('/',(req,res)=>{
-    getProducts().then(function(response){
+app.get('/',async (req,res)=>{
+    try{
+        const response = await getProducts();
         console.log(response);
-        res.send(response)
-    })
-    .catch(function(error){
+        res.send(response);
+    }catch(error){
         console.log(error);
-        res.send('Ooooops something went wrong');
-    })
+        res.send('Oops something went wrong');
+    }
 });
  
 
